@@ -20,7 +20,7 @@ public class Address {
 	
 	private Integer numero;
 	
-	private String cidadeString;
+	private String cidade;
 	
 	
 	public Address() {
@@ -67,13 +67,13 @@ public class Address {
 	}
 
 
-	public String getCidadeString() {
-		return cidadeString;
+	public String getCidade() {
+		return cidade;
 	}
 
 
-	public void setCidadeString(String cidadeString) {
-		this.cidadeString = cidadeString;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
 }
