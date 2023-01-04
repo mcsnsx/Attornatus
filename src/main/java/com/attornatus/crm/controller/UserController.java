@@ -1,11 +1,14 @@
 package com.attornatus.crm.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -61,6 +64,17 @@ public class UserController {
 		user.setDataNascimento(userDetails.getDataNascimento());
 		final User updateUser = userRepository.save(user);
 		return ResponseEntity.ok(updateUser);
+	}
+	
+	@DeleteMapping("/user/{id}")
+	public Map <String, Boolean> delete(@PathVariable(value = "id") Long userId) throws NotFoundException {
+		User user = userRepository.findById(userId)
+				.orElseThrow(() -> new NotFoundException());
+		
+		userRepository.delete(user);
+		Map<String, Boolean> resp = new HashMap<>();
+		resp.put("deleted", Boolean.TRUE);
+		return resp;
 	}
 	
 	
