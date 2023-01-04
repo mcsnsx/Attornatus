@@ -32,6 +32,6 @@ Segue abaixo o resumo dos requisitos que devem ser desenvolvidos:
 
 <hr> 
 
-* Status: Em andamento.
+* Status: Concluído.
 
 ##
