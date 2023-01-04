@@ -28,7 +28,6 @@ Segue abaixo o resumo dos requisitos que devem ser desenvolvidos:
 ###Diferencial
 * Testes;
 * Clean Code;
-* Disponibilização da documentação da API Swagger;
 
 <hr> 
 
